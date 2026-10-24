@@ -1,0 +1,50 @@
+import subprocess
+import os
+
+# We can use ImageMagick's MVG (Magick Vector Graphics) or direct -draw primitive which supports bezier paths and gradients!
+# MVG syntax is fully native to ImageMagick without external delegates (librsvg).
+
+mvg_code = """
+viewbox 0 0 512 512
+push defs
+push gradient 'pebbleGrad' linear 100,60 420,440
+stop-color '#C0C0C0' 0.0
+stop-color '#A0A0A0' 0.5
+stop-color '#757575' 1.0
+pop gradient
+push gradient 'wingGrad' linear 140,135 255,340
+stop-color '#FFFFFF' 0.0
+stop-color '#ECECEC' 0.6
+stop-color '#D0D0D0' 1.0
+pop gradient
+pop defs
+
+push graphic-context
+fill 'pebbleGrad'
+stroke none
+path 'M 180,55 C 225,56 275,72 335,102 C 395,132 455,182 482,216 C 502,242 505,268 488,294 C 462,334 408,382 350,418 C 292,454 225,460 168,440 C 115,420 58,370 30,310 C 6,260 8,212 32,164 C 58,112 118,54 180,55 Z'
+pop graphic-context
+
+push graphic-context
+fill '#FFFFFF'
+stroke none
+path 'M 456,224 C 440,217 424,213 410,210 C 400,207 392,206 386,208 C 388,214 394,222 396,228 C 398,236 388,248 372,260 C 342,282 302,284 260,272 C 210,256 162,204 136,132 C 138,162 154,218 190,262 C 222,300 255,328 255,344 C 255,350 228,348 185,332 C 136,314 96,292 78,284 C 112,330 182,374 252,374 C 316,374 366,342 398,295 C 422,260 442,236 456,224 Z'
+pop graphic-context
+
+push graphic-context
+fill 'wingGrad'
+stroke none
+path 'M 136,132 C 168,210 216,258 260,272 C 244,286 238,312 255,344 C 230,312 200,272 170,228 C 150,192 139,162 136,132 Z'
+pop graphic-context
+"""
+
+with open('logo.mvg', 'w') as f:
+    f.write(mvg_code)
+
+res = subprocess.run(['convert', '-size', '1024x1024', '-background', 'none', 'logo.mvg', '-resize', '512x512', 'silverbird_rendered.png'], capture_output=True, text=True)
+print("MVG render exit code:", res.returncode)
+print("Stdout:", res.stdout)
+print("Stderr:", res.stderr)
+
+if os.path.exists('silverbird_rendered.png'):
+    print("Output size:", subprocess.check_output(['identify', 'silverbird_rendered.png']).decode().strip())

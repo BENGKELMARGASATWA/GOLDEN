@@ -1,0 +1,8 @@
+{
+  "name": "AUDIT GOLDEN BIRD",
+  "description": "Aplikasi Audit Perawatan Mobil bertingkat untuk Auditor dan Super Admin dengan integrasi Google Sheets \u0026 BigQuery, foto inspeksi kamera bertingkat, dan monitoring all pool.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}

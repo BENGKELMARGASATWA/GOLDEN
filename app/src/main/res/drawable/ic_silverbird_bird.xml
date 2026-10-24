@@ -1,0 +1,47 @@
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:aapt="http://schemas.android.com/aapt"
+    android:width="108dp"
+    android:height="108dp"
+    android:viewportWidth="512"
+    android:viewportHeight="512">
+
+    <!-- Golden Bird Pebble Emblem Background -->
+    <path
+        android:pathData="M170,62 C210,63 260,78 320,105 C380,132 445,178 478,212 C498,235 504,258 488,284 C465,322 410,375 352,410 C295,444 228,452 172,434 C120,416 65,368 35,310 C10,262 10,215 32,168 C58,118 115,62 170,62 Z">
+        <aapt:attr name="android:fillColor">
+            <gradient
+                android:startX="100"
+                android:startY="60"
+                android:endX="420"
+                android:endY="440"
+                android:type="linear">
+                <item android:offset="0.0" android:color="#FFE6BA28" />
+                <item android:offset="0.3" android:color="#FFD4A318" />
+                <item android:offset="0.65" android:color="#FFB8860B" />
+                <item android:offset="1.0" android:color="#FF8A6202" />
+            </gradient>
+        </aapt:attr>
+    </path>
+
+    <!-- White Golden Bird Flying Bird Silhouette -->
+    <path
+        android:fillColor="#FFFFFFFF"
+        android:pathData="M446,230 C435,224 425,220 415,216 C405,213 395,210 385,208 C383,212 388,215 392,220 C396,226 392,236 380,248 C352,272 315,276 272,266 C220,250 170,202 142,134 C144,162 160,218 195,260 C225,296 256,324 256,340 C256,346 226,344 185,330 C138,314 98,294 80,285 C112,330 180,370 248,370 C310,370 358,340 390,295 C412,262 432,240 446,230 Z" />
+
+    <!-- Origami Wing Fold Inner Shadow -->
+    <path
+        android:pathData="M142,134 C172,212 222,258 272,266 C255,282 242,308 256,340 C235,310 205,270 176,228 C156,194 145,164 142,134 Z">
+        <aapt:attr name="android:fillColor">
+            <gradient
+                android:startX="142"
+                android:startY="134"
+                android:endX="256"
+                android:endY="340"
+                android:type="linear">
+                <item android:offset="0.0" android:color="#FFFFFFFF" />
+                <item android:offset="0.5" android:color="#FFEAD8A6" />
+                <item android:offset="1.0" android:color="#FFC8A856" />
+            </gradient>
+        </aapt:attr>
+    </path>
+</vector>
